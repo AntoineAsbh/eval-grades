@@ -20,3 +20,10 @@ Question 1:
 grades <- read_csv("grades.csv")
 ```
 
+Question 2:
+
+```{r}
+total_grades <- grades |> summarise(total=n()) |> pull(total)
+paste("The dataset contains", total_grades, "grades")
+```
+
