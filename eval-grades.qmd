@@ -122,6 +122,13 @@ ggplot(grades_distribution, aes(x=n, y= num_students))+
        y = "Number of Students")
 ```
 
+Question 11:
+
+```{r}
+ggplot(nb_grades_necromancy, aes(x = n))+
+  geom_bar()+ 
+    facet_wrap(vars(group))
+```
 
 
 
