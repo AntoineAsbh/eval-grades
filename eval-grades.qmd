@@ -156,3 +156,9 @@ ggplot(wider_df, aes(x = `Runecrafting and Glyphwork`, y = `Elemental Mastery an
   
 ```
 
+Question 14:
+
+```{r}
+wider_df |> group_by(group) |> summarise(correlation = cor(`Illusion and Enchantment`, `Elemental Mastery and Control`))
+```
+
