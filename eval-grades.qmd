@@ -4,3 +4,19 @@ author: "Antoine Calvayrac"
 format: html
 ---
 
+library
+```{r}
+#| message: false
+library(here)
+here::i_am("eval-grades.Rproj")
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(readr)
+```
+Question 1:
+
+```{r}
+grades <- read_csv("grades.csv")
+```
+
