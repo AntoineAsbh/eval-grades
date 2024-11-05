@@ -166,14 +166,5 @@ Question 15:
 
 ```{r}
 wider_df |> group_by(group) |> summarise(correlation = cor(`Illusion and Enchantment`, `Elemental Mastery and Control`)) |> filter(correlation >0.3)
-
-ggplot(correlation, aes(x = `Runecrafting and Glyphwork`, y = `Elemental Mastery and Control`))+
-  geom_point(alpha = 0.25) + 
-  labs(
-    title = "Average Grades in Elemental Mastery and Control vs. Average Grades in Runecrafting and Glyphwork",
-    x = "Average Grades in Runecrafting and Glyphwork",
-    y = "Average Grades in Elemental Mastery and Control")+
-  geom_smooth(method = "lm", color = "red", linetype = "dashed") ))
-
 ```
 
