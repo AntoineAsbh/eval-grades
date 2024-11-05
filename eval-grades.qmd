@@ -56,4 +56,20 @@ ggplot(students, aes(x = group)) +
        y = "Number of Students")
 ```
 
+Question 6:
+
+```{r}
+average_Rune_Glyph <- grades |> filter(course == "Runecrafting and Glyphwork") |> group_by(group) |> summarise(average = mean(grade))
+```
+
+```{r}
+ggplot(average_Rune_Glyph, aes(x = group, y =average)) + 
+  geom_col()+
+  labs(title = "Average per Group", 
+       x = "Group", 
+       y = "Grade")
+```
+
+
+
 
