@@ -45,3 +45,15 @@ students <- grades |> select(id, group) |> distinct(id, group)
 students |> slice_tail(n = 5) |> knitr::kable()
 ```
 
+
+Question 5:
+
+```{r}
+ggplot(students, aes(x = group)) + 
+  geom_bar()+
+  labs(title = "Number of Students per Group", 
+       x = "Group", 
+       y = "Number of Students")
+```
+
+
