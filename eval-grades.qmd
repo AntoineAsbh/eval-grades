@@ -103,8 +103,24 @@ nb_grades_necromancy <- grades |> filter(course == "Necromancy and Spirit Summon
 nb_grades_necromancy |> head(10)
 ```
 
+Question 10:
 
+```{r}
+nb_grades_necromancy |> group_by(n) |> summarise(num_students =n())
+```
 
+```{r}
+#|message: false
+grades_distribution <- nb_grades_necromancy |> group_by(n) |> summarise(num_students =n())
+```
+
+```{r}
+ggplot(grades_distribution, aes(x=n, y= num_students))+ 
+  geom_col()+
+  labs(title = "Distribution of Number of Grades in Necromancy and Spirit Summoning",
+       x = "Number of Grades",
+       y = "Number of Students")
+```
 
 
 
