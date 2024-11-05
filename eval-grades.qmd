@@ -34,4 +34,14 @@ num_students <- grades |> distinct(id) |> summarise(n = n()) |> pull(n)
 paste("The dataset contains", num_students , "students")
 ```
 
+Question 4:
+
+```{r}
+#| message: false
+students <- grades |> select(id, group) |> distinct(id, group) 
+```
+
+```{r}
+students |> slice_tail(n = 5) |> knitr::kable()
+```
 
