@@ -92,6 +92,18 @@ library(knitr)
 print(kable(grades_stat, format = "markdown", caption = "Summary Statistics of Grades per Student"))
 ```
 
+Question 9:
+
+```{r}
+#|mmessage: false
+nb_grades_necromancy <- grades |> filter(course == "Necromancy and Spirit Summoning") |> group_by(id, group) |> summarise(n =n()) 
+```
+
+```{r}
+nb_grades_necromancy |> head(10)
+```
+
+
 
 
 
