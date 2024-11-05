@@ -130,5 +130,16 @@ ggplot(nb_grades_necromancy, aes(x = n))+
     facet_wrap(vars(group))
 ```
 
+Question 12: 
 
+```{r}
+#|message: false
+average_grade <- grades |> select(-trimester) |> group_by(id, group, course) |> summarise(average_grades = mean(grade))
+
+wider_df <- average_grade |> pivot_wider(names_from = "course", values_from = "average_grades" )
+```
+
+```{r}
+wider_df |> head(10)
+```
 
