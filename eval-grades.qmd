@@ -70,6 +70,30 @@ ggplot(average_Rune_Glyph, aes(x = group, y =average)) +
        y = "Grade")
 ```
 
+Question 7:
+
+
+
+
+
+Question 8:
+
+
+```{r}
+grades |> group_by(id, group) |> summarise(n = n()) |> head(10)
+```
+
+```{r}
+grades_stat <- grades |> group_by(id, group) |> summarise(min_grade = min(grade), max_grade = max(grade), mean_grade = mean(grade), median_grade = median(grade) )
+```
+
+```{r}
+library(knitr)
+print(kable(grades_stat, format = "markdown", caption = "Summary Statistics of Grades per Student"))
+```
+
+
+
 
 
 
