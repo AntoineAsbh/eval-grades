@@ -27,3 +27,11 @@ total_grades <- grades |> summarise(total=n()) |> pull(total)
 paste("The dataset contains", total_grades, "grades")
 ```
 
+Question 3:
+
+```{r}
+num_students <- grades |> distinct(id) |> summarise(n = n()) |> pull(n)
+paste("The dataset contains", num_students , "students")
+```
+
+
